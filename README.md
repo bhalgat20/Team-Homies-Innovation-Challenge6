@@ -22,11 +22,29 @@ Adavantages :
       2.
     
 #### Technical Detail : 
+
     Tech Stack :
-    Tools:
-    Algorithm:
+    
+        Programming Language: 
+            1. Python
+            
+        Tools:
+            1. Jupyter Notebook
+            2. Vs code
+            3. Postman
+            
+        Major Framework :
+            1. Flask
+            
+    Algorithm :
+            1. Random Forest 
+            
     Deployment:
+            1. On Azure
+            
     Re-training:
+            1. Shedular re-retrain models with live data every "N" month / year 
+            
     API documnentation:
            1. GET : 
                 endpoint : /prediction
@@ -57,8 +75,7 @@ Adavantages :
                                 }
                               }
                             }
-                
-{ sellerId : ""
+           
     
    
 #### Reusability : 
