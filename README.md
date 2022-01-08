@@ -28,6 +28,37 @@ Adavantages :
     Deployment:
     Re-training:
     API documnentation:
+           1. GET : 
+                endpoint : /prediction
+                payload / body :    {
+                                      sellerId: {
+                                        "type": string
+                                      },
+                                      products: {
+                                        "type": array,
+                                        "items": {
+                                          "productName": {
+                                            "type": string
+                                          }
+                                        },
+                                      }
+                                    }
+                 reponse : {
+                              "type": array,
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "productName": {
+                                    "type": string
+                                  },
+                                  "Quantity": {
+                                    "type": float
+                                  }
+                                }
+                              }
+                            }
+                
+{ sellerId : ""
     
    
 #### Reusability : 
