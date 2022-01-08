@@ -5,6 +5,9 @@ name = "pypi"
 
 [packages]
 pandas = "*"
+matplotlib = "*"
+sklearn = "*"
+category-encoders = "*"
 
 [dev-packages]
 

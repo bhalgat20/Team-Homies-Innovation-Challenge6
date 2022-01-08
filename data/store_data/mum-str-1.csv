@@ -71,18 +71,18 @@ date,product name,p _ category,store_id,city / District ,eonomical crisis,health
 01/10/2020,Sanitizer,Consumable,mum-str-1,Mumbai,Medium,Low,Diwali,Winter,25357,0.16
 01/11/2020,Sanitizer,Consumable,mum-str-1,Mumbai,Medium,Low,,Winter,25357,0.16
 01/12/2020,Sanitizer,Consumable,mum-str-1,Mumbai,Medium,Low,Christmas,Winter,25357,0.15
-01/01/2020,Mask,Non Consumable,mum-str-1,Mumbai,Low,Low,"New Year ,Makar Sankranti",Winter,25357,2.0
-01/02/2020,Mask,Non Consumable,mum-str-1,Mumbai,Low,Low,,Summer,25357,2.0
-01/03/2020,Mask,Non Consumable,mum-str-1,Mumbai,Low,Medium,Gudhi Padwa,Summer,25357,5.0
-01/04/2020,Mask,Non Consumable,mum-str-1,Mumbai,High,High,,Summer,25357,9.0
-01/05/2020,Mask,Non Consumable,mum-str-1,Mumbai,High,High,,Summer,25357,10.0
-01/06/2020,Mask,Non Consumable,mum-str-1,Mumbai,High,High,,Rainy,25357,10.0
-01/07/2020,Mask,Non Consumable,mum-str-1,Mumbai,High,High,,Rainy,25357,10.0
-01/08/2020,Mask,Non Consumable,mum-str-1,Mumbai,High,Medium,"Ganesha festival,Raksh Bandhan",Rainy,25357,8.0
-01/09/2020,Mask,Non Consumable,mum-str-1,Mumbai,High,Medium,,Rainy,25357,7.0
-01/10/2020,Mask,Non Consumable,mum-str-1,Mumbai,Medium,Low,Diwali,Winter,25357,3.0
-01/11/2020,Mask,Non Consumable,mum-str-1,Mumbai,Medium,Low,,Winter,25357,2.0
-01/12/2020,Mask,Non Consumable,mum-str-1,Mumbai,Medium,Low,Christmas,Winter,25357,1.0
+01/01/2020,Mask,Non-Consumable,mum-str-1,Mumbai,Low,Low,"New Year ,Makar Sankranti",Winter,25357,2.0
+01/02/2020,Mask,Non-Consumable,mum-str-1,Mumbai,Low,Low,,Summer,25357,2.0
+01/03/2020,Mask,Non-Consumable,mum-str-1,Mumbai,Low,Medium,Gudhi Padwa,Summer,25357,5.0
+01/04/2020,Mask,Non-Consumable,mum-str-1,Mumbai,High,High,,Summer,25357,9.0
+01/05/2020,Mask,Non-Consumable,mum-str-1,Mumbai,High,High,,Summer,25357,10.0
+01/06/2020,Mask,Non-Consumable,mum-str-1,Mumbai,High,High,,Rainy,25357,10.0
+01/07/2020,Mask,Non-Consumable,mum-str-1,Mumbai,High,High,,Rainy,25357,10.0
+01/08/2020,Mask,Non-Consumable,mum-str-1,Mumbai,High,Medium,"Ganesha festival,Raksh Bandhan",Rainy,25357,8.0
+01/09/2020,Mask,Non-Consumable,mum-str-1,Mumbai,High,Medium,,Rainy,25357,7.0
+01/10/2020,Mask,Non-Consumable,mum-str-1,Mumbai,Medium,Low,Diwali,Winter,25357,3.0
+01/11/2020,Mask,Non-Consumable,mum-str-1,Mumbai,Medium,Low,,Winter,25357,2.0
+01/12/2020,Mask,Non-Consumable,mum-str-1,Mumbai,Medium,Low,Christmas,Winter,25357,1.0
 01/01/2020,Soap,Consumable,mum-str-1,Mumbai,Low,Low,"New Year ,Makar Sankranti",Winter,25357,10.0
 01/02/2020,Soap,Consumable,mum-str-1,Mumbai,Low,Low,,Summer,25357,11.0
 01/03/2020,Soap,Consumable,mum-str-1,Mumbai,Low,Medium,Gudhi Padwa,Summer,25357,12.0
@@ -95,15 +95,15 @@ date,product name,p _ category,store_id,city / District ,eonomical crisis,health
 01/10/2020,Soap,Consumable,mum-str-1,Mumbai,Medium,Low,Diwali,Winter,25357,11.0
 01/11/2020,Soap,Consumable,mum-str-1,Mumbai,Medium,Low,,Winter,25357,10.0
 01/12/2020,Soap,Consumable,mum-str-1,Mumbai,Medium,Low,Christmas,Winter,25357,10.0
-01/01/2020,Umbrella ,Non Consumable,mum-str-1,Mumbai,Low,Low,"New Year ,Makar Sankranti",Winter,25357,0.1
-01/02/2020,Umbrella ,Non Consumable,mum-str-1,Mumbai,Low,Low,,Summer,25357,0.5
-01/03/2020,Umbrella ,Non Consumable,mum-str-1,Mumbai,Low,Medium,Gudhi Padwa,Summer,25357,0.5
-01/04/2020,Umbrella ,Non Consumable,mum-str-1,Mumbai,High,High,,Summer,25357,0.5
-01/05/2020,Umbrella ,Non Consumable,mum-str-1,Mumbai,High,High,,Summer,25357,0.5
-01/06/2020,Umbrella ,Non Consumable,mum-str-1,Mumbai,High,High,,Rainy,25357,1.2
-01/07/2020,Umbrella ,Non Consumable,mum-str-1,Mumbai,High,High,,Rainy,25357,1.3
-01/08/2020,Umbrella ,Non Consumable,mum-str-1,Mumbai,High,Medium,"Ganesha festival,Raksh Bandhan",Rainy,25357,1.3
-01/09/2020,Umbrella ,Non Consumable,mum-str-1,Mumbai,High,Medium,,Rainy,25357,1.3
-01/10/2020,Umbrella ,Non Consumable,mum-str-1,Mumbai,Medium,Low,Diwali,Winter,25357,0.0
-01/11/2020,Umbrella ,Non Consumable,mum-str-1,Mumbai,Medium,Low,,Winter,25357,0.0
-01/12/2020,Umbrella ,Non Consumable,mum-str-1,Mumbai,Medium,Low,Christmas,Winter,25357,0.1
+01/01/2020,Umbrella ,Non-Consumable,mum-str-1,Mumbai,Low,Low,"New Year ,Makar Sankranti",Winter,25357,0.1
+01/02/2020,Umbrella ,Non-Consumable,mum-str-1,Mumbai,Low,Low,,Summer,25357,0.5
+01/03/2020,Umbrella ,Non-Consumable,mum-str-1,Mumbai,Low,Medium,Gudhi Padwa,Summer,25357,0.5
+01/04/2020,Umbrella ,Non-Consumable,mum-str-1,Mumbai,High,High,,Summer,25357,0.5
+01/05/2020,Umbrella ,Non-Consumable,mum-str-1,Mumbai,High,High,,Summer,25357,0.5
+01/06/2020,Umbrella ,Non-Consumable,mum-str-1,Mumbai,High,High,,Rainy,25357,1.2
+01/07/2020,Umbrella ,Non-Consumable,mum-str-1,Mumbai,High,High,,Rainy,25357,1.3
+01/08/2020,Umbrella ,Non-Consumable,mum-str-1,Mumbai,High,Medium,"Ganesha festival,Raksh Bandhan",Rainy,25357,1.3
+01/09/2020,Umbrella ,Non-Consumable,mum-str-1,Mumbai,High,Medium,,Rainy,25357,1.3
+01/10/2020,Umbrella ,Non-Consumable,mum-str-1,Mumbai,Medium,Low,Diwali,Winter,25357,0.0
+01/11/2020,Umbrella ,Non-Consumable,mum-str-1,Mumbai,Medium,Low,,Winter,25357,0.0
+01/12/2020,Umbrella ,Non-Consumable,mum-str-1,Mumbai,Medium,Low,Christmas,Winter,25357,0.1
