@@ -1,7 +1,7 @@
 # ONDC Invovation Hackathon  
 
 ### Problem Statement :
-    Create a model (using formal programming language) for non-deterministic inventory
+    Challenge 6 : Create a model (using formal programming language) for non-deterministic inventory
     management to determine the optimal “lot size” to minimize the operational costs related to
     ordering and moving goods through the retail supply chain.
 
