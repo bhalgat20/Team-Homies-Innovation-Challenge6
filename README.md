@@ -21,16 +21,30 @@ Adavantages :
       1. 
       2.
     
-#### Techincal Detail : 
+#### Technical Detail : 
+    Tech Stack :
+    Tools:
+    Algorithm:
+    Deployment:
+    Re-training:
+    API documnentation:
+    
+   
+#### Reusability : 
     API :
     
+#### Scalability : 
+    API :
+    
+#### Extensibility: 
+    API :
     
 #### Assumptions :
   1. Lot size of every products is 100 
   2. 
 
 
-### Project Setup : 
+### Instructions to build & operate the app: 
 
        
 ### Future Scope : 
