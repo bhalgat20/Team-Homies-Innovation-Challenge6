@@ -15,11 +15,18 @@ We understood the problem of local Kirana store in managing the inventory. The m
 
 ## Approach :
 
-The team came up with generic , re-usable , scalable Machine Learning model which can help seller address above challenges. 
+The team came up with generic , re-usable , scalable Machine Learning model which can help seller address above challenges.
+
 The seller can trained thier specific model with their sales data for last few years and model will be able to predict optimum lot size for next few months. 
-The ML model will be customized , trained and deployed seperately for each seller to improve the accuracy based out of seller 
+
+The ML model will be customized , trained and deployed seperately for each seller to improve the accuracy based out of seller historical data , demand , weather , economic , regional sentiments.
+
+The ML model will pre-process the data and extract weighted features to ?
+
+The ML model with deployed on Azure Cloud and will be exposed via API endpoint for prediction and re-trained the model.
+
     
-### Description :
+### ML Model :
 
 A non-deterministic ML model which predicts optimal quantity of products for a seller . 
 - __Header extraction and parsing__
@@ -28,6 +35,7 @@ A non-deterministic ML model which predicts optimal quantity of products for a s
       1. Customised prediction for each seller on platform 
       2. Ability to extract required feature i.g : 
       3. Auto-retrain mechanism  over a period of time with live data
+      4.
       
 Adavantages : 
       1. 
@@ -35,24 +43,26 @@ Adavantages :
     
 ### Technical Detail : 
 
-    Tech Stack :
+#### Tech Stack :
     
-        Programming Language: 
-            1. Python
+  **Language and Packages:**
+  - Python
+  - Panda
+  - Skilearn
             
-        Tools:
-            1. Jupyter Notebook
-            2. Vs code
-            3. Postman
+  **Tools and IDE:**
+  - Jupyter Notebook
+  - VS Code
+  - Postman
             
-        Major Framework :
-            1. Flask
+  **Deployment :**
+  - Flask
+  - Azure 
             
-    Algorithm :
-            1. Random Forest 
+  **Algorithm :**
+  - Random Forest 
             
-    Deployment:
-            1. On Azure
+
             
     Re-training:
             1. Shedular re-retrain models with live data every "N" month / year 
@@ -114,7 +124,7 @@ Adavantages :
 3. Based on data collected from seller app via our post end point , ML model can be trained to suggest products to sell in an area , to maximise seller's profit .
 4. Given data of logistic company provding service in an area , we can provide suggestion of charges of different logistic company to enable seller to provide home delivery with maximum profit.
             NB: Required factors : Weight ,date , distance ; factors which can be derived with our feature extractor : weather ( from date ) , holidays ( from date ) , population density ( from city ) etc.
-5. Sheduler can be in-corporated to re-retrain model with live data to imporve model accuracy over time.
+    5. Sheduler can be in-corporated to re-retrain model with live data to imporve model accuracy over time.
            NB: Scheduler is a piece of code which run after fixed interval [ this interval can be 1 month / 1 year etc. ] 
     
 
