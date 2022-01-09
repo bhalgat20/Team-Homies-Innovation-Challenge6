@@ -50,6 +50,7 @@ The ML model with deployed on Azure Cloud and will be exposed via API endpoint f
 - The prototype seed data contains below values for now,
   store ids  mum-str-1, mum-str-2, kol-str-1, kol-str-2
   products [Rice,Sugar,Notebook,Sanitizer,Mask,Cold drink,Tea,Soap,Umbrella]
+  date should be in valid format. Ex. 2020-02-09 15:27:49.529933
   
 
 ### ML Model :
