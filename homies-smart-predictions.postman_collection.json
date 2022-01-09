@@ -52,7 +52,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://20.106.131.5:3000/logistic/predict",
+					"raw": "http://20.106.131.5:3000/logistic/prediction",
 					"protocol": "http",
 					"host": [
 						"20",
