@@ -1,13 +1,16 @@
 import os
-from fastapi import FastAPI
-import pandas as pd
-from src.api.utils import utils
 import pickle
+import csv
+
+import pandas as pd
+from fastapi import FastAPI
+
 from src.api.data_providers import location_provider, health_status_provider, economy_status_provider, \
     population_density_provider, festivals_provider, weather_data_provider, lot_size_provider, product_category_provider
-
 from src.api.models.PredictionRequest import PredictionRequest
 from src.api.models.PredictionResponse import PredictionResponse
+from src.api.models.TrainDataRequest import TrainDataRequest
+from src.api.utils import utils
 
 INDIA_POPULATION = 1300000000
 
@@ -27,6 +30,15 @@ async def predict(prediction_request: PredictionRequest):
     for product in products:
         response.append(get_prediction_for_product(prediction_request, product))
     return response
+
+
+@app.post('/update-train-data', status_code=201)
+async def update_train_data(train_data: TrainDataRequest):
+    with open('./master_data/master_data.csv', 'a') as f:
+        for row in train_data.data:
+            writer = csv.writer(f)
+            writer.writerow(row.dict().values())
+    return "Done"
 
 
 def get_prediction_for_product(prediction_request, product_name):
@@ -102,4 +114,4 @@ def predict_quantity(request_details):
     model = pickle.load(model_file)
     predicted_lot_size = model.predict(input_data_point)
     model_file.close()
-    return round(predicted_lot_size[0], 2)
+    return round(predicted_lot_size[0], 1)
