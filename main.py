@@ -4,6 +4,7 @@ import pickle
 
 import pandas as pd
 from fastapi import FastAPI
+from fastapi.openapi.utils import get_openapi
 
 from src.api.data_providers import location_provider, health_status_provider, economy_status_provider, \
     population_density_provider, festivals_provider, weather_data_provider, lot_size_provider, product_category_provider
@@ -22,6 +23,22 @@ num_col = ["Distance in km", "Wieght", "Population Density"]
 norm_val = [MAX_DIST, MAX_WT, INDIA_POPULATION]
 
 app = FastAPI()
+
+
+def custom_openapi():
+    if app.openapi_schema:
+        return app.openapi_schema
+    openapi_schema = get_openapi(
+        title="Hommies-Inventory Management",
+        version="1.0.0",
+        description="API's for predicting the Lot-size and Logistic optimal Price",
+        routes=app.routes,
+    )
+    app.openapi_schema = openapi_schema
+    return app.openapi_schema
+
+
+app.openapi = custom_openapi
 
 
 @app.post('/retail/prediction', status_code=200,
