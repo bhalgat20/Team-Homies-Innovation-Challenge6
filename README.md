@@ -1,5 +1,9 @@
 # ONDC Invovation Hackathon  
 
+## Team Name
+
+**Homies**
+
 ## Team members
 
 - Ashish Bhalgat (ashish.bhalgat@thoughtworks.com)
