@@ -40,16 +40,19 @@ The ML model with deployed on Azure Cloud and will be exposed via API endpoint f
 
 ## Demo Details
 
-- Api Documentation link
+- API Documentation link
 http://ondchomiestw.eastus.cloudapp.azure.com:3000/docs
-- retail prediction endpoint 
+- Retail prediction endpoint 
+```
 POST http://ondchomiestw.eastus.cloudapp.azure.com:3000/retail/prediction
 {
     "store_id": "mum-str-1",
     "products": ["Rice","Sugar","Notebook","Milk"],
     "date":"2020-02-09 15:27:49.529933"
 }
-- logistic prediction endpoint 
+```
+- Logistic prediction endpoint 
+```
 POST http://ondchomiestw.eastus.cloudapp.azure.com:3000/logistic/predict
 {
   "distance": 20,
@@ -57,7 +60,10 @@ POST http://ondchomiestw.eastus.cloudapp.azure.com:3000/logistic/predict
   "weight": 50,
   "date": "2020-01-09T15:02:58.178Z"
 }
+```
+
 - Update data set for retail transaction endpoint (retrain model)
+```
 POST http://ondchomiestw.eastus.cloudapp.azure.com:3000/retail/update-data-set
 {
   "data": [
@@ -69,7 +75,7 @@ POST http://ondchomiestw.eastus.cloudapp.azure.com:3000/retail/update-data-set
     }
   ]
 }
-
+```
 ### Assumptions :
 
 - The data set used for building the model is mocked data for an a year(2020) time frame.
