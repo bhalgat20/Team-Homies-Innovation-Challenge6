@@ -1,9 +1,9 @@
 # ONDC Invovation Hackathon  
 
 ## Problem Statement :
-__Challenge 6__ : Create a model (using formal programming language) for non-deterministic inventory
+__Challenge 6__ : _ _Create a model (using formal programming language) for non-deterministic inventory
     management to determine the optimal “lot size” to minimize the operational costs related to
-    ordering and moving goods through the retail supply chain.
+    ordering and moving goods through the retail supply chain. _ _
     
 We understood the problem of local Kirana store in managing the inventory. The major challenges the Kirana seller has,
     
@@ -21,19 +21,26 @@ The seller can trained thier specific model with their sales data for last few y
 
 The ML model will be customized , trained and deployed seperately for each seller to improve the accuracy based out of seller historical data , demand , weather , economic , regional sentiments.
 
-The ML model will pre-process the data and extract weighted features to ?
+The ML model will pre-process the data and extract weighted features as part of pre proccesing step. The model will further consider all the external factors like weather , economy , regional sentiments , population and festival timeframe through calender. 
+
 
 The ML model with deployed on Azure Cloud and will be exposed via API endpoint for prediction and re-trained the model.
 
-    
+### Assumptions :
+
+- The data set used for building the model is mocked data for an a year(2020) time frame.
+- The external data used for the model training is coming from seed data instead of integration with real service.
+- The data set represent sales of a given 10 products for each month in that store for a year.
+  
+
 ### ML Model :
 
-A non-deterministic ML model which predicts optimal quantity of products for a seller . 
+A non-deterministic ML model which predicts optimal quantity of products for a seller . The model is built on Randome forest algorithm.
 
 - __Key-Hightlights__ :
     - Customised prediction for each seller on platform 
     - Ability to extract required feature  
-    -  Auto-retrain mechanism  over a period of time with live data
+    - Auto-retrain mechanism  over a period of time with live data
       
       
 Adavantages : 
@@ -67,7 +74,7 @@ Adavantages :
 
             
   **Re-training:**
-            1. Shedular re-retrain models with live data every "N" month / year 
+  - Shedular re-retrain models with live data every "N" month / year 
             
   **API documnentation :**
   - GET : 
