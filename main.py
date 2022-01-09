@@ -1,18 +1,25 @@
+import csv
 import os
 import pickle
-import csv
 
 import pandas as pd
 from fastapi import FastAPI
 
 from src.api.data_providers import location_provider, health_status_provider, economy_status_provider, \
     population_density_provider, festivals_provider, weather_data_provider, lot_size_provider, product_category_provider
+from src.api.models.LogisticPredictionRequest import LogisticPredictionRequest
+from src.api.models.LogisticResponse import LogisticResponse
 from src.api.models.RetailRequest import RetailRequest
 from src.api.models.RetailResponse import RetailResponse
 from src.api.models.TrainDataRequest import TrainDataRequest
 from src.api.utils import utils
 
 INDIA_POPULATION = 1300000000
+MAX_DIST = 1000
+MAX_WT = 100
+LOGISTIC_COMPANIES = ['E-Dlvry', 'E-Kart', 'E-Com']
+num_col = ["Distance in km", "Wieght", "Population Density"]
+norm_val = [MAX_DIST, MAX_WT, INDIA_POPULATION]
 
 app = FastAPI()
 
@@ -37,6 +44,36 @@ async def update_train_data(train_data: TrainDataRequest):
             writer = csv.writer(f)
             writer.writerow(row.dict().values())
     return "Done"
+
+
+@app.post('/logistic/predict', status_code=200, name="Predict Optimal logistics delivery provider",
+          response_model=LogisticResponse)
+async def predict_optimal_logistic_provider(logistic_request: LogisticPredictionRequest):
+    month = utils.get_month(logistic_request.date)
+    weather = weather_data_provider.get_weather(month)
+    population_density = population_density_provider.get_population_density(logistic_request.city)
+
+    data_point = pd.DataFrame({
+        "Distance in km": [logistic_request.distance],
+        'City': [logistic_request.city],
+        'weather ': [weather],
+        'Wieght': [logistic_request.weight],
+        'Holiday': ["no"],
+        'Population Density': [population_density]
+    })
+    optimal_prediction = {'company': "", "price": None}
+    for company in LOGISTIC_COMPANIES:
+        model_file = open(os.path.join("trained_models", "logistic_" + company + ".pkl"), 'rb')
+        model = pickle.load(model_file)
+        logistic_data_point = create_logistic_data_point(company, data_point)
+        model_file.close()
+        current_prediction = model.predict(
+            logistic_data_point)
+        if optimal_prediction['price'] is not None and optimal_prediction['price'] < current_prediction[0]:
+            optimal_prediction = {"company": company, "price": current_prediction[0]}
+        elif optimal_prediction['price'] is None:
+            optimal_prediction = {"company": company, "price": current_prediction[0]}
+    return optimal_prediction
 
 
 def get_prediction_for_product(prediction_request, product_name):
@@ -113,3 +150,23 @@ def predict_quantity(request_details):
     predicted_lot_size = model.predict(input_data_point)
     model_file.close()
     return round(predicted_lot_size[0], 1)
+
+
+def normalize(data, columns, normalize_value):
+    for col, val in zip(columns, normalize_value):
+        data[col] = data[col] / val
+    return data
+
+
+def encode_logistic_features(logistic_company):
+    encoder_file = open(os.path.join("feature_encoder", "logistic_" + logistic_company + ".obj"), 'rb')
+    encoder_loaded = pickle.load(encoder_file)
+    encoder_file.close()
+    return encoder_loaded
+
+
+def create_logistic_data_point(logistic_company, data_point):
+    encoder_loaded = encode_logistic_features(logistic_company)
+    data_point_ohe = encoder_loaded.transform(data_point)
+    input_data_point = normalize(data_point_ohe, num_col, norm_val)
+    return input_data_point
