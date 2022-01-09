@@ -131,7 +131,8 @@ Adavantages :
     
 ### Scalability : 
 - Currently the model is deployed in Azure IAAS given the timeframe and the usage. 
-- The plan is to use 
+- The plan is to deploy the model in Azure / AWS Kubernetes cluster which can auto-scale based on demand.
+- The mode training can be done on cloud based GPU cluster.
     
 ### Extensibility: 
     API :
@@ -141,16 +142,22 @@ Adavantages :
 
 ### Instructions to build & operate the app: 
 
-       
-### Future Scope : 
-
-   - We can extend existing logic to predict optimal quantity of lots size of products of newly on-boarded seller based on existing model of seller residing at same place .
-   - Logic can be extended to support custom duration [ not necessarily a month starting from 1st, i.e : predictions from 03/02/2022 to 08/04/2022 ] for which a seller wants to stock products.
-   - Based on data collected from seller app via our post end point , ML model can be trained to suggest products to sell in an area , to maximise seller's profit .
-   - Given data of logistic company provding service in an area , we can provide suggestion of charges of different logistic company to enable seller to provide home delivery with maximum profit.
-        - NB: Required factors : Weight ,date , distance ; factors which can be derived with our feature extractor : weather ( from date ) , holidays ( from date ) , population density ( from city ) etc.
-   - Sheduler can be in-corporated to re-retrain model with live data to imporve model accuracy over time.
-        - NB: Scheduler is a piece of code which run after fixed interval [ this interval can be 1 month / 1 year etc. ] 
     
+### Future Scope : 
+- We can extend existing logic to predict optimal quantity of lots size of products of newly on-boarded seller based on existing model of seller residing at same place .
+- Logic can be extended to support custom duration [ not necessarily a month starting from 1st, i.e : predictions from 03/02/2022 to 08/04/2022 ] for which a seller wants to stock products.
+- Based on data collected from seller app via our post end point , ML model can be trained to suggest products to sell in an area , to maximise seller's profit .
+- Given data of logistic company provding service in an area , we can provide suggestion of charges of different logistic company to enable seller to provide home delivery with maximum profit. - NB: Required factors : Weight ,date , distance ; factors which can be derived with our feature extractor : weather ( from date ) , holidays ( from date ) , population density ( from city ) etc.
+- Scheduler can be in-corporated to re-retrain model with live data to improve model accuracy over time.
+      
+   
+   
+### Revenue Model :    
+- Seller will use the Software as service in subscription mode. 
+- Seller will pay yearly subscription which will include below benefits,
+    - Auto ee-training of model.
+    - Get prediction of the product quantity for future month.
+    - Alerting on demand of given product for the calender month.
+    - Better pricing strategy.
 
 
