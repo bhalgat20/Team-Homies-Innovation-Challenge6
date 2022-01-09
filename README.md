@@ -143,7 +143,7 @@ The swagger API documentation has been implemented.
     
 ### Future Scope : 
 - The ML smart inventory model can be trained with real sales data from the Kirana store.
-- The ML model needs to be deployed with any cloud provider. The model needs to be monitored , deployment pipleline needs to be created and auto hyper paramenter feature tuning needs to be applied.
+- The ML model needs to be deployed with any cloud provider. The model needs to be monitored , deployment pipeline needs to be created and auto hyper parameter feature tuning needs to be applied.
 - We can extend existing model logic to predict optimal quantity of lots size of products of newly on-boarded seller based on existing model of seller residing at same place .
 - Logic can be extended to support custom duration [ not necessarily a month starting from 1st, i.e : predictions from 03/02/2022 to 08/04/2022 ] for which a seller wants to stock products.
 - Based on data collected from seller app via our post end point , ML model can be re-trained to suggest products to sell in an area , to maximize seller's profit .
