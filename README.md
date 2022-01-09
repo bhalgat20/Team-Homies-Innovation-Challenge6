@@ -48,9 +48,8 @@ The ML model with deployed on Azure Cloud and will be exposed via API endpoint f
 - The lot size taken in train data is 100 units(kg/pieces) for all products
 - The features used in prediction model e.g. weather data, economy status, health crisis data, population density etc. are currently being read from seed files. The data provider implementations should further be extended to read these feature data from realtime online sources. Example weather data : https://openweathermap.org/api
 - The prototype seed data contains below values for now,
-  store ids  mum-str-1, mum-str-2, kol-str-1, kol-str-2
-  products [Rice,Sugar,Notebook,Sanitizer,Mask,Cold drink,Tea,Soap,Umbrella]
-  date should be in valid format. Ex. 2020-02-09 15:27:49.529933
+  store ids - mum-str-01
+  
   
 
 ### ML Model :
@@ -91,7 +90,10 @@ Advantages :
   **Algorithm :**
   - Random Forest 
             
-###API documentation###
+### API documentation ###
+
+The swagger API documentation has been implemented.
+
   - GET : 
 
 
@@ -157,12 +159,16 @@ Advantages :
 
     
 ### Scalability : 
+
 - Currently the model is deployed in Azure IAAS given the timeframe and the usage. 
 - The plan is to deploy the model in Azure / AWS Kubernetes cluster which can auto-scale based on demand.
 - The mode training can be done on cloud based GPU cluster.
     
 ### Extensibility: 
-    API :
+
+- The model can be further extend to predict the products to be purchased and in demand for the seller. This will help seller to invest in right products , right quantity at right time.
+- The model can be trained for huge set of data to improve the accuracy of the hypothesis claimed.
+- The model can be applied in multiple domain where forecasting prediction is primary requirement. We could apply model in Retail as well as logistics domain. This can be further applied in Energy utlization , Distributors etc. 
     
 
 
