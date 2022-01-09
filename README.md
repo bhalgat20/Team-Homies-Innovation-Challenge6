@@ -31,14 +31,13 @@ We understood the problem of local Kirana store in managing the inventory. The m
 
 The team came up with generic , re-usable , scalable Machine Learning model which can help seller address above challenges.
 
-The seller can trained their specific model with their sales data for last few years and model will be able to predict optimum lot size for next few months. 
-
 The ML model will be customized , trained and deployed separately for each seller to improve the accuracy based out of seller historical data , demand , weather , economic , regional sentiments.
+
+The seller can trained their specific model with their sales data for last few years and model will be able to predict optimum lot size for next few months. 
 
 The ML model will pre-process the data and extract weighted features as part of pre processing step. The model will further consider all the external factors like weather , economy , regional sentiments , population and festival timeframe through calender. 
 
-
-The ML model with deployed on Azure Cloud and will be exposed via API endpoint for prediction and re-trained the model.
+The ML model with deployed on Azure Cloud and will be exposed via API endpoint for prediction and updating the dataset which will be used for re-training the model.
 
 ### Assumptions :
 
@@ -60,6 +59,7 @@ A non-deterministic ML model which predicts optimal quantity of products for a s
     - Customized prediction for each seller on platform 
     - Ability to extract required feature  
     - Auto-retrain mechanism  over a period of time with live data
+    - The model accuracy is around 90% with the current test data.
       
       
 
@@ -141,20 +141,31 @@ The swagger API documentation has been implemented.
 
     
 ### Future Scope : 
-- We can extend existing logic to predict optimal quantity of lots size of products of newly on-boarded seller based on existing model of seller residing at same place .
+- The ML smart inventory model can be trained with real sales data from the Kirana store.
+- The ML model needs to be deployed with any cloud provider. The model needs to be monitored , deployment pipleline needs to be created and auto hyper paramenter feature tuning needs to be applied.
+- We can extend existing model logic to predict optimal quantity of lots size of products of newly on-boarded seller based on existing model of seller residing at same place .
 - Logic can be extended to support custom duration [ not necessarily a month starting from 1st, i.e : predictions from 03/02/2022 to 08/04/2022 ] for which a seller wants to stock products.
-- Based on data collected from seller app via our post end point , ML model can be trained to suggest products to sell in an area , to maximize seller's profit .
+- Based on data collected from seller app via our post end point , ML model can be re-trained to suggest products to sell in an area , to maximize seller's profit .
 - Given data of logistic company providing service in an area , we can provide suggestion of charges of different logistic company to enable seller to provide home delivery with maximum profit. - NB: Required factors : Weight ,date , distance ; factors which can be derived with our feature extractor : weather ( from date ) , holidays ( from date ) , population density ( from city ) etc.
-- Scheduler can be incorporated to re-retrain model with live data to improve model accuracy over time.
+- Scheduler can be incorporated to re-train model with live data to improve model accuracy over time.
       
    
    
 ### Revenue Model :    
-- Seller will use the Software as service in subscription mode. 
-- Seller will pay yearly subscription which will include below benefits,
-    - Auto ee-training of model.
-    - Get prediction of the product quantity for future month.
-    - Alerting on demand of given product for the calender month.
-    - Better pricing strategy.
+
+There are two revenue model we thought of
+1) Subscription based
+    - Seller will use the Software as service in subscription mode. 
+    - Seller will pay yearly subscription which will include below benefits,
+        - Auto re-training of model.
+        - Get prediction of the product quantity for future month.
+        - Alerting on demand of given product for the calender month.
+        - Better pricing strategy.
+
+2) Consumption based
+    - Seller will pay for use.
+    - Seller will pay when they predict for products lot size.
+    - Seller will pay during retraining the model.
+     
 
 
