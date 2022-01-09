@@ -1,25 +1,27 @@
 # ONDC Invovation Hackathon  
 
-### Problem Statement :
-    Challenge 6 : Create a model (using formal programming language) for non-deterministic inventory
+## Problem Statement :
+Challenge 6 : Create a model (using formal programming language) for non-deterministic inventory
     management to determine the optimal “lot size” to minimize the operational costs related to
     ordering and moving goods through the retail supply chain.
     
-    We understood the problem of local Kirana store in managing the inventory. The major challenges the Kirana seller has,
+We understood the problem of local Kirana store in managing the inventory. The major challenges the Kirana seller has,
     
-    1) Optimal lot size of a given product for future month.
-    2) Right lot size to ensure the inventory space is efficiently managed for multiple products.
-    3) Identify what products will be in demand for upcoming month and their optimal quantity.
-    4) Identify any unforseen instances (Economy crisis, Health crisis , Weather crisis , Regional news sentiment) which might impact future demand and plan accordingly.
-    5) Seller wants to make maximum profit from his available inventory.
+- __Optimal Lot Size__ - Optimal lot size of a given product for future month.
+- __Efficiently manage inventory space__ - Right lot size to ensure the inventory space is efficiently managed for multiple products.
+- __Predict products in demand__ - Identify what products will be in demand for upcoming month and their optimal quantity.
+- __Predict unforeseen crisis__ - Identify any unforseen instances (Economy crisis, Health crisis , Weather crisis , Regional news sentiment) which might impact future demand and plan accordingly.
+- __Maximize profit__ - Seller wants to make maximum profit from his investment made in inventory.    
 
-### Approach :
+## Approach :
 
+The team came up with generic , re-usable , scalable Machine Learning model which can help address above challenges. 
+The seller can trained thier specific model with their sales data for last few years and model will be capable 
     
-    
-#### Description :
+### Description :
 
-  A non-deterministic ML model which predicts optimal quantity of products for a seller . 
+A non-deterministic ML model which predicts optimal quantity of products for a seller . 
+- __Header extraction and parsing__
  
     Key-Hightlights:
       1. Customised prediction for each seller on platform 
@@ -31,7 +33,7 @@ Adavantages :
       1. 
       2.
     
-#### Technical Detail : 
+### Technical Detail : 
 
     Tech Stack :
     
@@ -88,16 +90,16 @@ Adavantages :
            
     
    
-#### Reusability : 
+### Reusability : 
     API :
     
-#### Scalability : 
+### Scalability : 
     API :
     
-#### Extensibility: 
+### Extensibility: 
     API :
     
-#### Assumptions :
+### Assumptions :
   1. Lot size of every products is 100 
   2. We are doing predcition of requried lots of product on monthly basis.
 
