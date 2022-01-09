@@ -62,9 +62,7 @@ A non-deterministic ML model which predicts optimal quantity of products for a s
     - Auto-retrain mechanism  over a period of time with live data
       
       
-Advantages : 
-      1. 
-      2.
+
       
 ### Flow Diagram :
 ![Flow-Diagram!](Flow-Diagram.png)
@@ -93,62 +91,9 @@ Advantages :
 ### API documentation ###
 
 The swagger API documentation has been implemented.
+(http://ondchomiestw.eastus.cloudapp.azure.com:3000/docs)
 
-  - GET : 
 
-
-             endpoint :         /prediction
-             payload / body : 
-                            {
-                                "store_id": "mum-str-1",
-                                "products": ["Rice","Sugar","Notebook","Milk"],
-                                "date":"2020-02-09 15:27:49.529933"
-                            }
-
-             response :     [
-                              {
-                                "Rice": {
-                                  "store_id": "mum-str-1",
-                                  "product_name": "Rice",
-                                  "prediction": "11982.0 KG",
-                                  "error": null
-                                }
-                              },
-                              {
-                                "Notebook": {
-                                  "store_id": "mum-str-1",
-                                  "product_name": "Notebook",
-                                  "prediction": "1455.0 Pcs",
-                                  "error": null
-                                }
-                              },
-                            ]
-  -POST :
-            endpoint :         /
-            payload / body : 
-
-                          {
-                            "data": [
-                                {
-                                    "store_id": "mum-str-1",
-                                    "product_name": "Momos",
-                                    "date": "2020-02-09 15:27:49.529933",
-                                    "quantity": 5
-                                },
-                                {
-                                    "store_id": "kol-str-1",
-                                    "product_name": "Pickle",
-                                    "date": "2020-02-09 15:27:49.529933",
-                                    "quantity": 10
-                                }
-                                ,{
-                                    "store_id": "mum-str-2",
-                                    "product_name": "Bat",
-                                    "date": "2020-02-09 15:27:49.529933",
-                                    "quantity": 50
-                                }
-                            ]
-                          }
     
    
 ### Reusability : 
