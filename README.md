@@ -4,14 +4,24 @@
     Challenge 6 : Create a model (using formal programming language) for non-deterministic inventory
     management to determine the optimal “lot size” to minimize the operational costs related to
     ordering and moving goods through the retail supply chain.
+    
+    We understood the problem of local Kirana store in managing the inventory. The major challenges the Kirana seller has,
+    
+    1) Optimal lot size of a given product for future month.
+    2) Right lot size to ensure the inventory space is efficiently managed for multiple products.
+    3) Identify what products will be in demand for upcoming month and their optimal quantity.
+    4) Identify any unforseen instances (Economy crisis, Health crisis , Weather crisis , Regional news sentiment) which might impact future demand and plan accordingly.
+    5) Seller wants to make maximum profit from his available inventory.
 
-### Solution :
+### Approach :
 
+    
+    
 #### Description :
 
-  A non-deterministic ML model which predicts optimal qantinty of products for a seller . 
+  A non-deterministic ML model which predicts optimal quantity of products for a seller . 
  
-    key-Hightlights:
+    Key-Hightlights:
       1. Customised prediction for each seller on platform 
       2. Ability to extract required feature i.g : 
       3. Auto-retrain mechanism  over a period of time with live data
