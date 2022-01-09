@@ -78,6 +78,8 @@ A non-deterministic ML model which predicts optimal quantity of products for a s
 The swagger API documentation has been implemented.
 (http://ondchomiestw.eastus.cloudapp.azure.com:3000/docs)
 
+![Api-Documentation!](Api-Documentation.png)
+
 
 ## Demo Details
 
