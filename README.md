@@ -29,13 +29,12 @@ The ML model with deployed on Azure Cloud and will be exposed via API endpoint f
 ### ML Model :
 
 A non-deterministic ML model which predicts optimal quantity of products for a seller . 
-- __Header extraction and parsing__
- 
-    Key-Hightlights:
-      1. Customised prediction for each seller on platform 
-      2. Ability to extract required feature i.g : 
-      3. Auto-retrain mechanism  over a period of time with live data
-      4.
+
+- __Key-Hightlights__ :
+    - Customised prediction for each seller on platform 
+    - Ability to extract required feature  
+    -  Auto-retrain mechanism  over a period of time with live data
+      
       
 Adavantages : 
       1. 
@@ -64,26 +63,29 @@ Adavantages :
             
 
             
-    Re-training:
+  **Re-training:**
             1. Shedular re-retrain models with live data every "N" month / year 
             
-    API documnentation:
-           1. GET : 
-                endpoint : /prediction
-                payload / body :    {
-                                      sellerId: {
+  **API documnentation :**
+  - GET : 
+
+
+             endpoint :         /prediction
+             payload / body :   {
+                                  sellerId: {
+                                    "type": string
+                                  },
+                                  products: {
+                                    "type": array,
+                                    "items": {
+                                      "productName": {
                                         "type": string
-                                      },
-                                      products: {
-                                        "type": array,
-                                        "items": {
-                                          "productName": {
-                                            "type": string
-                                          }
-                                        },
                                       }
                                     }
-                 reponse : {
+                                  }
+                                }
+
+              reponse :     {
                               "type": array,
                               "items": {
                                 "type": "object",
@@ -96,7 +98,7 @@ Adavantages :
                                   }
                                 }
                               }
-                            }
+                            } 
            
     
    
@@ -119,13 +121,13 @@ Adavantages :
        
 ### Future Scope : 
 
-1. We can extend existing logic to predict optimal quatity of lots size of products of newly on-boarded seller based on existing model of seller residing at same place .
-2. Logic can be extended to support custom duration [ not necessarily a month starting from 1st, i.e : predictions from 03/02/2022 to 08/04/2022 ] for which a seller wants to stock products.
-3. Based on data collected from seller app via our post end point , ML model can be trained to suggest products to sell in an area , to maximise seller's profit .
-4. Given data of logistic company provding service in an area , we can provide suggestion of charges of different logistic company to enable seller to provide home delivery with maximum profit.
-            NB: Required factors : Weight ,date , distance ; factors which can be derived with our feature extractor : weather ( from date ) , holidays ( from date ) , population density ( from city ) etc.
-    5. Sheduler can be in-corporated to re-retrain model with live data to imporve model accuracy over time.
-           NB: Scheduler is a piece of code which run after fixed interval [ this interval can be 1 month / 1 year etc. ] 
+   - We can extend existing logic to predict optimal quantity of lots size of products of newly on-boarded seller based on existing model of seller residing at same place .
+   - Logic can be extended to support custom duration [ not necessarily a month starting from 1st, i.e : predictions from 03/02/2022 to 08/04/2022 ] for which a seller wants to stock products.
+   - Based on data collected from seller app via our post end point , ML model can be trained to suggest products to sell in an area , to maximise seller's profit .
+   - Given data of logistic company provding service in an area , we can provide suggestion of charges of different logistic company to enable seller to provide home delivery with maximum profit.
+        - NB: Required factors : Weight ,date , distance ; factors which can be derived with our feature extractor : weather ( from date ) , holidays ( from date ) , population density ( from city ) etc.
+   - Sheduler can be in-corporated to re-retrain model with live data to imporve model accuracy over time.
+        - NB: Scheduler is a piece of code which run after fixed interval [ this interval can be 1 month / 1 year etc. ] 
     
 
 
