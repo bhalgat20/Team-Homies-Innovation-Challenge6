@@ -50,7 +50,9 @@ The ML model with deployed on Azure Cloud and will be exposed via API endpoint f
   store ids  mum-str-1, mum-str-2, kol-str-1, kol-str-2
   products [Rice,Sugar,Notebook,Sanitizer,Mask,Cold drink,Tea,Soap,Umbrella]
   date should be in valid format. Ex. 2020-02-09 15:27:49.529933
-  
+- The data set used for building the logistic model is mocked data of three logistic companies providing service in two cities ( Mumbai & Kolkata )  for an a year(2020) time frame.
+  city : Kolkata , Mumbai
+  logistic company : E-Kart , E-Com , E-dlvry
 
 ### ML Model :
 
@@ -61,6 +63,7 @@ A non-deterministic ML model which predicts optimal quantity of products for a s
     - Ability to extract required feature  
     - Auto-retrain mechanism  over a period of time with live data
     - The model accuracy is around 90% with the current test data.
+    - ML model extended to logistic domain , which recommends a logistic company with least charge.
       
       
 
@@ -108,7 +111,7 @@ The swagger API documentation has been implemented.
 
 - Currently the model is deployed in Azure IAAS given the timeframe and the usage. 
 - The plan is to deploy the model in Azure / AWS Kubernetes cluster which can auto-scale based on demand.
-- The mode training can be done on cloud based GPU cluster.
+- The model training can be done on cloud based GPU cluster.
     
 ### Extensibility: 
 
