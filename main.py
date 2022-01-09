@@ -19,7 +19,7 @@ app = FastAPI()
 
 @app.get('/')
 def root():
-    return 'Hello There!! Welcome to Smart Invetory'
+    return 'Hello There!! Welcome to Smart Inventory'
 
 
 @app.get('/prediction', status_code=200, response_description="Returns the lot Prediction for the Given Products List",
