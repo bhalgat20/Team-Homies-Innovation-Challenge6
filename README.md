@@ -1,5 +1,15 @@
 # ONDC Invovation Hackathon  
 
+## Team members
+
+- Ashish Bhalgat (ashish.bhalgat@thoughtworks.com)
+- ?
+- ?
+- ?
+- ?
+
+
+
 ## Problem Statement :
 __Challenge 6__ : _ _Create a model (using formal programming language) for non-deterministic inventory
     management to determine the optimal “lot size” to minimize the operational costs related to
@@ -113,17 +123,20 @@ Adavantages :
     
    
 ### Reusability : 
-    API :
+
+- The model once prepared can be re-trained for each seller for their respective store lot size prediction and forecasting.
+- The same trained model can be re-use by nearby kiranta stores for forecasting demand.  
+- The model can be tweaked so that it can be applied to another domain instead of retail. The team went ahead and were able to applied the model to Logistic domain.
+
     
 ### Scalability : 
-    API :
+- Currently the model is deployed in Azure IAAS given the timeframe and the usage. 
+- The plan is to use 
     
 ### Extensibility: 
     API :
     
-### Assumptions :
-  1. Lot size of every products is 100 
-  2. We are doing predcition of requried lots of product on monthly basis.
+
 
 
 ### Instructions to build & operate the app: 
