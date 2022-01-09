@@ -7,6 +7,7 @@ from src.api.data_providers import location_provider, health_status_provider, ec
     population_density_provider, festivals_provider, weather_data_provider, lot_size_provider, product_category_provider
 
 from src.api.models.PredictionRequest import PredictionRequest
+from src.api.models.PredictionResponse import PredictionResponse
 
 INDIA_POPULATION = 1300000000
 
@@ -19,7 +20,7 @@ def root():
 
 
 @app.get('/prediction', status_code=200, response_description="Returns the lot Prediction for the Given Products List",
-         )
+         response_model=PredictionResponse)
 async def predict(prediction_request: PredictionRequest):
     response = []
     products = prediction_request.products
@@ -57,19 +58,16 @@ def get_prediction_for_product(prediction_request, product_name):
     final_prediction_val = lot_size_provider.get_lot_size(predicted_lot_size, product_name)
     if "None" not in final_prediction_val.split():
         return {f"{product_name}": {
-            "location": location,
-            "month": month,
-            "year": year,
-            "economy_status": economy_status,
-            "health_status": health_status,
-            "population_density": population_density,
-            "festivals": festivals,
-            "weather": weather,
+            "store_id": prediction_request.store_id,
+            "product_name": product_name,
             "prediction": final_prediction_val
         }}
     else:
         return {
             f"{product_name}": {
+                "store_id": store_id,
+                "product_name": product_name,
+                "prediction": "NaN",
                 "error": "No Product with the given Name"
             }
         }

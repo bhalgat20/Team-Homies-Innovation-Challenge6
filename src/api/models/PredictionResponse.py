@@ -1,12 +1,14 @@
-from typing import Dict
+from typing import Dict, Optional, List
 
 from pydantic import BaseModel
 
 
 class Prediction(BaseModel):
+    store_id: str
     product_name: str
-    quantity: float
+    prediction: str
+    error: Optional[str]
 
 
 class PredictionResponse(BaseModel):
-    __root__: Dict[str, Prediction]
+    __root__: List[Dict[str, Prediction]]
