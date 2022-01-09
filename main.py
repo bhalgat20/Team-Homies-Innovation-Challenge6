@@ -51,11 +51,11 @@ async def update_train_data(train_data: TrainDataRequest):
 async def predict_optimal_logistic_provider(logistic_request: LogisticPredictionRequest):
     month = utils.get_month(logistic_request.date)
     weather = weather_data_provider.get_weather(month)
-    population_density = population_density_provider.get_population_density(logistic_request.city)
+    population_density = population_density_provider.get_population_density(logistic_request.city.title())
 
     data_point = pd.DataFrame({
         "Distance in km": [logistic_request.distance],
-        'City': [logistic_request.city],
+        'City': [logistic_request.city.title()],
         'weather ': [weather],
         'Wieght': [logistic_request.weight],
         'Holiday': ["no"],
