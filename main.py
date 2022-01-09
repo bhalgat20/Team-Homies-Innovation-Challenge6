@@ -31,7 +31,7 @@ def custom_openapi():
     openapi_schema = get_openapi(
         title="Hommies-Inventory Management",
         version="1.0.0",
-        description="API's for predicting the Lot-size and Logistic optimal Price",
+        description="API's for predicting the lot-size and logistic optimal price",
         routes=app.routes,
     )
     app.openapi_schema = openapi_schema
@@ -42,8 +42,14 @@ app.openapi = custom_openapi
 
 
 @app.post('/retail/prediction', status_code=200,
-          name="Predict the Lot size for the given product list and the given date(Month)",
-          response_description="Returns the lot size for the given product list and the given date(Month)",
+          name="Predict Lot-Size",
+          description="Predict the lot-size for the given product list and the given date(month)."
+                      "Below stores and products are configured while training the model\n"
+                      "store_ids : mum-str-1, mum-str-2, kol-str-1, kol-str-2\n"
+                      "products : Rice,Sugar,Notebook,Sanitizer,Mask,Cold drink,Tea,Soap,Umbrella\n"
+                      "date should be in valid format. Ex. 2020-02-09 15:27:49.529933\n"
+                      "Use these values while sending the API request.",
+          response_description="Returns the lot size for the given product list and the given date(month)",
           response_model=RetailResponse)
 async def predict(retail_request: RetailRequest):
     response = []
@@ -54,7 +60,11 @@ async def predict(retail_request: RetailRequest):
 
 
 @app.post('/retail/update-data-set', status_code=201,
-          name="Update the Retail Master DataSet, which can be used to retrain the model")
+          name="Update Retail Data-Set",
+          description="Update the retail master data-set, which can be used to retrain the model."
+                      "\nPlease send the request in the following format:\n"
+                      "Refer to this file on github : main/master_data/master_data.csv",
+          )
 async def update_train_data(train_data: TrainDataRequest):
     with open('./master_data/master_data.csv', 'a') as f:
         for row in train_data.data:
@@ -63,7 +73,11 @@ async def update_train_data(train_data: TrainDataRequest):
     return "Done"
 
 
-@app.post('/logistic/predict', status_code=200, name="Predict Optimal logistics delivery provider",
+@app.post('/logistic/prediction', status_code=200, name="Predict optimal logistics delivery provider",
+          description="Predict optimal logistics delivery provider for the given location and distance"
+                      "Below Cities are used while training the model.\n"
+                      "city : Mumbai, Kolkata\n"
+                      "Use these values while sending the API request.",
           response_model=LogisticResponse)
 async def predict_optimal_logistic_provider(logistic_request: LogisticPredictionRequest):
     month = utils.get_month(logistic_request.date)
