@@ -53,6 +53,32 @@ A non-deterministic ML model which predicts optimal quantity of products for a s
       
 ### Flow Diagram :
 ![Flow-Diagram!](Flow-Diagram.png)
+
+### Assumptions :
+
+- The data set used for building the model is mocked data for an a year(2020) time frame.
+- The external data used for the model training is coming from seed data instead of integration with real service.
+- The data set represent sales of a given 10 products for each month in that store for a year.
+- The lot size taken in train data is 100 units(kg/pieces) for all products
+- The features used in prediction model e.g. weather data, economy status, health crisis data, population density etc. are currently being read from seed files. The data provider implementations should further be extended to read these feature data from realtime online sources. Example weather data : https://openweathermap.org/api
+- The prototype seed data contains below values for now,
+  store ids  mum-str-1, mum-str-2, kol-str-1, kol-str-2
+  products [Rice,Sugar,Notebook,Sanitizer,Mask,Cold drink,Tea,Soap,Umbrella]
+  date should be in valid format. Ex. 2020-02-09 15:27:49.529933
+- The data set used for building the logistic model is mocked data of three logistic companies providing service in two cities ( Mumbai & Kolkata )  for an a year(2020) time frame.
+  city : Kolkata , Mumbai
+  logistic company : E-Kart , E-Com , E-dlvry
+
+
+
+
+            
+### API documentation ###
+
+The swagger API documentation has been implemented.
+(http://ondchomiestw.eastus.cloudapp.azure.com:3000/docs)
+
+
 ## Demo Details
 
 - API Documentation link
@@ -90,33 +116,7 @@ POST http://ondchomiestw.eastus.cloudapp.azure.com:3000/retail/update-data-set
     }
   ]
 }
-```
-### Assumptions :
-
-- The data set used for building the model is mocked data for an a year(2020) time frame.
-- The external data used for the model training is coming from seed data instead of integration with real service.
-- The data set represent sales of a given 10 products for each month in that store for a year.
-- The lot size taken in train data is 100 units(kg/pieces) for all products
-- The features used in prediction model e.g. weather data, economy status, health crisis data, population density etc. are currently being read from seed files. The data provider implementations should further be extended to read these feature data from realtime online sources. Example weather data : https://openweathermap.org/api
-- The prototype seed data contains below values for now,
-  store ids  mum-str-1, mum-str-2, kol-str-1, kol-str-2
-  products [Rice,Sugar,Notebook,Sanitizer,Mask,Cold drink,Tea,Soap,Umbrella]
-  date should be in valid format. Ex. 2020-02-09 15:27:49.529933
-- The data set used for building the logistic model is mocked data of three logistic companies providing service in two cities ( Mumbai & Kolkata )  for an a year(2020) time frame.
-  city : Kolkata , Mumbai
-  logistic company : E-Kart , E-Com , E-dlvry
-
-
-
-
-            
-### API documentation ###
-
-The swagger API documentation has been implemented.
-(http://ondchomiestw.eastus.cloudapp.azure.com:3000/docs)
-
-
-    
+```    
    
 ### Reusability : 
 
