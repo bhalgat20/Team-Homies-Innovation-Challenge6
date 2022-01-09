@@ -13,7 +13,6 @@
 - Nilesh Mahadik (nilesh.mahadik@thoughtworks.com)
 
 
-
 ## Problem Statement :
 __Challenge 6__ : *Create a model (using formal programming language) for non-deterministic inventory
     management to determine the optimal “lot size” to minimize the operational costs related to
@@ -38,6 +37,38 @@ The seller can trained their specific model with their sales data for last few y
 The ML model will pre-process the data and extract weighted features as part of pre processing step. The model will further consider all the external factors like weather , economy , regional sentiments , population and festival timeframe through calender. 
 
 The ML model with deployed on Azure Cloud and will be exposed via API endpoint for prediction and updating the dataset which will be used for re-training the model.
+
+## Demo Details
+
+- Api Documentation link
+http://ondchomiestw.eastus.cloudapp.azure.com:3000/docs
+- retail prediction endpoint 
+POST http://ondchomiestw.eastus.cloudapp.azure.com:3000/retail/prediction
+{
+    "store_id": "mum-str-1",
+    "products": ["Rice","Sugar","Notebook","Milk"],
+    "date":"2020-02-09 15:27:49.529933"
+}
+- logistic prediction endpoint 
+POST http://ondchomiestw.eastus.cloudapp.azure.com:3000/logistic/predict
+{
+  "distance": 20,
+  "city": "Mumbai",
+  "weight": 50,
+  "date": "2020-01-09T15:02:58.178Z"
+}
+- Update data set for retail transaction endpoint (retrain model)
+POST http://ondchomiestw.eastus.cloudapp.azure.com:3000/retail/update-data-set
+{
+  "data": [
+    {
+      "store_id": "mum-str-1",
+      "product_name": "Rice",
+      "date": "2022-01-09T15:11:44.906Z",
+      "quantity": 100
+    }
+  ]
+}
 
 ### Assumptions :
 
