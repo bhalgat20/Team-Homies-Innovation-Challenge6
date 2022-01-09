@@ -3,10 +3,17 @@
 ## Team members
 
 - Ashish Bhalgat (ashish.bhalgat@thoughtworks.com)
+<<<<<<< HEAD
 - Nilesh Mahadik (nilesh.mahadik@thoughtworks.com)
 - Naresh Chakali (chakali.naresh@thoughtworks.com)
 - Md Mubasir (md.mubasir@thoughtworks.com) 
 - Md Faisal Sohail (mdfaisal.sohail@thoughtworks.com)
+=======
+- Md Faisal Sohail (mdfaisal.sohail@thoughtworks.com)
+- Md Mubasir (md.mubasir@thoughtworks.com)
+- Naresh Chakali (chakali.naresh@thoughtworks.com)
+- Nilesh Mahadik (nilesh.mahadik@thoughtworks.com)
+>>>>>>> Nilesh read me additions
 
 
 
@@ -20,18 +27,18 @@ We understood the problem of local Kirana store in managing the inventory. The m
 - __Optimal Lot Size__ - Optimal lot size of a given product for future month.
 - __Efficiently manage inventory space__ - Right lot size to ensure the inventory space is efficiently managed for multiple products.
 - __Predict products in demand__ - Identify what products will be in demand for upcoming month and their optimal quantity.
-- __Predict unforeseen crisis__ - Identify any unforseen instances (Economy crisis, Health crisis , Weather crisis , Regional news sentiment) which might impact future demand and plan accordingly.
+- __Predict unforeseen crisis__ - Identify any unforeseen instances (Economy crisis, Health crisis , Weather crisis , Regional news sentiment) which might impact future demand and plan accordingly.
 - __Maximize profit__ - Seller wants to make maximum profit from his investment made in inventory.    
 
 ## Approach :
 
 The team came up with generic , re-usable , scalable Machine Learning model which can help seller address above challenges.
 
-The seller can trained thier specific model with their sales data for last few years and model will be able to predict optimum lot size for next few months. 
+The seller can trained their specific model with their sales data for last few years and model will be able to predict optimum lot size for next few months. 
 
-The ML model will be customized , trained and deployed seperately for each seller to improve the accuracy based out of seller historical data , demand , weather , economic , regional sentiments.
+The ML model will be customized , trained and deployed separately for each seller to improve the accuracy based out of seller historical data , demand , weather , economic , regional sentiments.
 
-The ML model will pre-process the data and extract weighted features as part of pre proccesing step. The model will further consider all the external factors like weather , economy , regional sentiments , population and festival timeframe through calender. 
+The ML model will pre-process the data and extract weighted features as part of pre processing step. The model will further consider all the external factors like weather , economy , regional sentiments , population and festival timeframe through calender. 
 
 
 The ML model with deployed on Azure Cloud and will be exposed via API endpoint for prediction and re-trained the model.
@@ -41,19 +48,24 @@ The ML model with deployed on Azure Cloud and will be exposed via API endpoint f
 - The data set used for building the model is mocked data for an a year(2020) time frame.
 - The external data used for the model training is coming from seed data instead of integration with real service.
 - The data set represent sales of a given 10 products for each month in that store for a year.
+- The lot size taken in train data is 100 units(kg/pieces) for all products
+- The features used in prediction model e.g. weather data, economy status, health crisis data, population density etc. are currently being read from seed files. The data provider implementations should further be extended to read these feature data from realtime online sources. Example weather data : https://openweathermap.org/api
+- The prototype seed data contains below values for now,
+  store ids - mum-str-01
+  
   
 
 ### ML Model :
 
-A non-deterministic ML model which predicts optimal quantity of products for a seller . The model is built on Randome forest algorithm.
+A non-deterministic ML model which predicts optimal quantity of products for a seller . The model is built on Random forest algorithm.
 
 - __Key-Hightlights__ :
-    - Customised prediction for each seller on platform 
+    - Customized prediction for each seller on platform 
     - Ability to extract required feature  
     - Auto-retrain mechanism  over a period of time with live data
       
       
-Adavantages : 
+Advantages : 
       1. 
       2.
       
@@ -67,7 +79,7 @@ Adavantages :
   **Language and Packages:**
   - Python
   - Panda
-  - Skilearn
+  - Sklearn
             
   **Tools and IDE:**
   - Jupyter Notebook
@@ -84,9 +96,9 @@ Adavantages :
 
             
   **Re-training:**
-  - Shedular re-retrain models with live data every "N" month / year 
+  - Schedular re-retrain models with live data every "N" month / year 
             
-  **API documnentation :**
+  **API documentation :**
   - GET : 
 
 
@@ -105,7 +117,7 @@ Adavantages :
                                   }
                                 }
 
-              reponse :     {
+              response :     {
                               "type": array,
                               "items": {
                                 "type": "object",
@@ -125,7 +137,7 @@ Adavantages :
 ### Reusability : 
 
 - The model once prepared can be re-trained for each seller for their respective store lot size prediction and forecasting.
-- The same trained model can be re-use by nearby kiranta stores for forecasting demand.  
+- The same trained model can be re-use by nearby kirana stores for forecasting demand.  
 - The model can be tweaked so that it can be applied to another domain instead of retail. The team went ahead and were able to applied the model to Logistic domain.
 
     
@@ -165,9 +177,9 @@ Adavantages :
 ### Future Scope : 
 - We can extend existing logic to predict optimal quantity of lots size of products of newly on-boarded seller based on existing model of seller residing at same place .
 - Logic can be extended to support custom duration [ not necessarily a month starting from 1st, i.e : predictions from 03/02/2022 to 08/04/2022 ] for which a seller wants to stock products.
-- Based on data collected from seller app via our post end point , ML model can be trained to suggest products to sell in an area , to maximise seller's profit .
-- Given data of logistic company provding service in an area , we can provide suggestion of charges of different logistic company to enable seller to provide home delivery with maximum profit. - NB: Required factors : Weight ,date , distance ; factors which can be derived with our feature extractor : weather ( from date ) , holidays ( from date ) , population density ( from city ) etc.
-- Scheduler can be in-corporated to re-retrain model with live data to improve model accuracy over time.
+- Based on data collected from seller app via our post end point , ML model can be trained to suggest products to sell in an area , to maximize seller's profit .
+- Given data of logistic company providing service in an area , we can provide suggestion of charges of different logistic company to enable seller to provide home delivery with maximum profit. - NB: Required factors : Weight ,date , distance ; factors which can be derived with our feature extractor : weather ( from date ) , holidays ( from date ) , population density ( from city ) etc.
+- Scheduler can be incorporated to re-retrain model with live data to improve model accuracy over time.
       
    
    
