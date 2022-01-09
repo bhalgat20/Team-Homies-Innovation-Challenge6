@@ -42,7 +42,7 @@ The ML model with deployed on Azure Cloud and will be exposed via API endpoint f
 
 - API Documentation link
 http://ondchomiestw.eastus.cloudapp.azure.com:3000/docs
-- Retail prediction endpoint 
+- **Retail prediction endpoint** 
 ```
 POST http://ondchomiestw.eastus.cloudapp.azure.com:3000/retail/prediction
 {
@@ -51,9 +51,9 @@ POST http://ondchomiestw.eastus.cloudapp.azure.com:3000/retail/prediction
     "date":"2020-02-09 15:27:49.529933"
 }
 ```
-- Logistic prediction endpoint 
+- **Logistic prediction endpoint **
 ```
-POST http://ondchomiestw.eastus.cloudapp.azure.com:3000/logistic/predict
+POST http://ondchomiestw.eastus.cloudapp.azure.com:3000/logistic/prediction
 {
   "distance": 20,
   "city": "Mumbai",
@@ -62,7 +62,7 @@ POST http://ondchomiestw.eastus.cloudapp.azure.com:3000/logistic/predict
 }
 ```
 
-- Update data set for retail transaction endpoint (retrain model)
+- **Update data set for retail transaction endpoint (re-train model)**
 ```
 POST http://ondchomiestw.eastus.cloudapp.azure.com:3000/retail/update-data-set
 {
