@@ -28,7 +28,6 @@ A non-deterministic ML model which predicts optimal quantity of products for a s
       1. Customised prediction for each seller on platform 
       2. Ability to extract required feature i.g : 
       3. Auto-retrain mechanism  over a period of time with live data
-      4.
       
 Adavantages : 
       1. 
@@ -115,7 +114,7 @@ Adavantages :
 3. Based on data collected from seller app via our post end point , ML model can be trained to suggest products to sell in an area , to maximise seller's profit .
 4. Given data of logistic company provding service in an area , we can provide suggestion of charges of different logistic company to enable seller to provide home delivery with maximum profit.
             NB: Required factors : Weight ,date , distance ; factors which can be derived with our feature extractor : weather ( from date ) , holidays ( from date ) , population density ( from city ) etc.
-    5. Sheduler can be in-corporated to re-retrain model with live data to imporve model accuracy over time.
+5. Sheduler can be in-corporated to re-retrain model with live data to imporve model accuracy over time.
            NB: Scheduler is a piece of code which run after fixed interval [ this interval can be 1 month / 1 year etc. ] 
     
 
