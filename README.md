@@ -83,6 +83,8 @@ The swagger API documentation has been implemented.
 
 ## Demo Details
 
+- [Video Link](https://drive.google.com/file/d/1lFogyDgcSndmyOeRPu385E3WK2KeTEWj/view?usp=sharing)
+
 - API Documentation link
 http://ondchomiestw.eastus.cloudapp.azure.com:3000/docs
 - **Retail prediction endpoint** 
