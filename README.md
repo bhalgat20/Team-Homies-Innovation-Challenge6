@@ -90,12 +90,7 @@ Advantages :
   **Algorithm :**
   - Random Forest 
             
-
-            
-  **Re-training:**
-  - Schedular re-retrain models with live data every "N" month / year 
-            
-  **API documentation :**
+###API documentation###
   - GET : 
 
 
