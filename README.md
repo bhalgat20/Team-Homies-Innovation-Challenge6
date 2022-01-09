@@ -37,7 +37,22 @@ The seller can trained their specific model with their sales data for last few y
 The ML model will pre-process the data and extract weighted features as part of pre processing step. The model will further consider all the external factors like weather , economy , regional sentiments , population and festival timeframe through calender. 
 
 The ML model with deployed on Azure Cloud and will be exposed via API endpoint for prediction and updating the dataset which will be used for re-training the model.
+### ML Model :
 
+A non-deterministic ML model which predicts optimal quantity of products for a seller . The model is built on Random forest algorithm.
+
+- __Key-Hightlights__ :
+    - Customized prediction for each seller on platform 
+    - Ability to extract required feature  
+    - Auto-retrain mechanism  over a period of time with live data
+    - The model accuracy is around 90% with the current test data.
+    - ML model extended to logistic domain , which recommends a logistic company with least charge.
+      
+      
+
+      
+### Flow Diagram :
+![Flow-Diagram!](Flow-Diagram.png)
 ## Demo Details
 
 - API Documentation link
@@ -51,7 +66,7 @@ POST http://ondchomiestw.eastus.cloudapp.azure.com:3000/retail/prediction
     "date":"2020-02-09 15:27:49.529933"
 }
 ```
-- **Logistic prediction endpoint **
+- **Logistic prediction endpoint**
 ```
 POST http://ondchomiestw.eastus.cloudapp.azure.com:3000/logistic/prediction
 {
@@ -91,43 +106,9 @@ POST http://ondchomiestw.eastus.cloudapp.azure.com:3000/retail/update-data-set
   city : Kolkata , Mumbai
   logistic company : E-Kart , E-Com , E-dlvry
 
-### ML Model :
 
-A non-deterministic ML model which predicts optimal quantity of products for a seller . The model is built on Random forest algorithm.
 
-- __Key-Hightlights__ :
-    - Customized prediction for each seller on platform 
-    - Ability to extract required feature  
-    - Auto-retrain mechanism  over a period of time with live data
-    - The model accuracy is around 90% with the current test data.
-    - ML model extended to logistic domain , which recommends a logistic company with least charge.
-      
-      
 
-      
-### Flow Diagram :
-![Flow-Diagram!](Flow-Diagram.png)
-
-### Technical Detail : 
-
-#### Tech Stack :
-    
-  **Language and Packages:**
-  - Python
-  - Panda
-  - Sklearn
-            
-  **Tools and IDE:**
-  - Jupyter Notebook
-  - VS Code
-  - Postman
-            
-  **Deployment :**
-  - FastApi
-  - Azure 
-            
-  **Algorithm :**
-  - Random Forest 
             
 ### API documentation ###
 
@@ -209,4 +190,22 @@ There are two revenue model we thought of
     - Seller will pay during retraining the model.
      
 
+### Tech Stack : 
 
+    
+  **Language and Packages:**
+  - Python
+  - Panda
+  - Sklearn
+            
+  **Tools and IDE:**
+  - Jupyter Notebook
+  - VS Code
+  - Postman
+            
+  **Deployment :**
+  - FastApi
+  - Azure 
+            
+  **Algorithm :**
+  - Random Forest 
