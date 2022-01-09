@@ -142,6 +142,25 @@ Adavantages :
 
 ### Instructions to build & operate the app: 
 
+- **Initial setup**
+    1. clone project repository :
+         `git clone <path_of_github_repository>`
+    2. Move to project directory
+        `cd <path_of_clone_project_directory>`
+        
+- **Setup local environment**
+    1. Create Virtual environment for python :
+        `python3 -m venv venv`
+    2. Activate virtual environment created :
+        `source venv/bin/activate`
+    3. Install pipenv :
+        `pip3 install pipenv`    
+    4. Install the requirements from pip file :
+        `pipenv install`
+    5. Start app locally :
+        `uvicorn main:app --reload`
+
+
     
 ### Future Scope : 
 - We can extend existing logic to predict optimal quantity of lots size of products of newly on-boarded seller based on existing model of seller residing at same place .
