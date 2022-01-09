@@ -56,7 +56,7 @@ Adavantages :
   - Postman
             
   **Deployment :**
-  - Flask
+  - FastApi
   - Azure 
             
   **Algorithm :**
