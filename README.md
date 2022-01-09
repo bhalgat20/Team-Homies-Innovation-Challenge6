@@ -48,8 +48,8 @@ The ML model with deployed on Azure Cloud and will be exposed via API endpoint f
 - The lot size taken in train data is 100 units(kg/pieces) for all products
 - The features used in prediction model e.g. weather data, economy status, health crisis data, population density etc. are currently being read from seed files. The data provider implementations should further be extended to read these feature data from realtime online sources. Example weather data : https://openweathermap.org/api
 - The prototype seed data contains below values for now,
-  store ids - mum-str-01
-  
+  store ids  mum-str-1, mum-str-2, kol-str-1, kol-str-2
+  products [Rice,Sugar,Notebook,Sanitizer,Mask,Cold drink,Tea,Soap,Umbrella]
   
 
 ### ML Model :
