@@ -11,9 +11,9 @@
 
 
 ## Problem Statement :
-__Challenge 6__ : _ _Create a model (using formal programming language) for non-deterministic inventory
+__Challenge 6__ : *Create a model (using formal programming language) for non-deterministic inventory
     management to determine the optimal “lot size” to minimize the operational costs related to
-    ordering and moving goods through the retail supply chain. _ _
+    ordering and moving goods through the retail supply chain.*
     
 We understood the problem of local Kirana store in managing the inventory. The major challenges the Kirana seller has,
     
