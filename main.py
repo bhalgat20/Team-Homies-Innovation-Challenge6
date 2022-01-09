@@ -7,8 +7,8 @@ from fastapi import FastAPI
 
 from src.api.data_providers import location_provider, health_status_provider, economy_status_provider, \
     population_density_provider, festivals_provider, weather_data_provider, lot_size_provider, product_category_provider
-from src.api.models.PredictionRequest import PredictionRequest
-from src.api.models.PredictionResponse import PredictionResponse
+from src.api.models.RetailRequest import RetailRequest
+from src.api.models.RetailResponse import RetailResponse
 from src.api.models.TrainDataRequest import TrainDataRequest
 from src.api.utils import utils
 
@@ -17,22 +17,20 @@ INDIA_POPULATION = 1300000000
 app = FastAPI()
 
 
-@app.get('/')
-def root():
-    return 'Hello There!! Welcome to Smart Inventory'
-
-
-@app.get('/prediction', status_code=200, response_description="Returns the lot Prediction for the Given Products List",
-         response_model=PredictionResponse)
-async def predict(prediction_request: PredictionRequest):
+@app.post('/retail/prediction', status_code=200,
+          name="Predict the Lot size for the given product list and the given date(Month)",
+          response_description="Returns the lot size for the given product list and the given date(Month)",
+          response_model=RetailResponse)
+async def predict(retail_request: RetailRequest):
     response = []
-    products = prediction_request.products
+    products = retail_request.products
     for product in products:
-        response.append(get_prediction_for_product(prediction_request, product))
+        response.append(get_prediction_for_product(retail_request, product))
     return response
 
 
-@app.post('/update-train-data', status_code=201)
+@app.post('/retail/update-data-set', status_code=201,
+          name="Update the Retail Master DataSet, which can be used to retrain the model")
 async def update_train_data(train_data: TrainDataRequest):
     with open('./master_data/master_data.csv', 'a') as f:
         for row in train_data.data:

@@ -10,5 +10,5 @@ class Prediction(BaseModel):
     error: Optional[str]
 
 
-class PredictionResponse(BaseModel):
+class RetailResponse(BaseModel):
     __root__: List[Dict[str, Prediction]]
