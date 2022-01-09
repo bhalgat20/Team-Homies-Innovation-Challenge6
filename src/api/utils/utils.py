@@ -22,6 +22,7 @@ def mapper(file,key,value,target):
 def status_mapper(file,key,date,value,target):
     try:
         df = pd.read_csv(file)
+        df.dropna(inplace=True)
         for index,row in df.iterrows():
             if row[key] == value and row['date']==date:
                 return row[target]

@@ -8,6 +8,8 @@ pandas = "*"
 matplotlib = "*"
 sklearn = "*"
 category-encoders = "*"
+fastapi = "*"
+uvicorn = "*"
 
 [dev-packages]
 
