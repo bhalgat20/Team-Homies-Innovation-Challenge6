@@ -6,5 +6,5 @@ from pydantic import BaseModel
 
 class PredictionRequest(BaseModel):
     store_id: str
-    product_name: List[str]
+    products: List[str]
     date: datetime.datetime

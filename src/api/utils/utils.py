@@ -14,8 +14,10 @@ def mapper(file,key,value,target):
         for index,row in df.iterrows():
             if row[key] == value:
                 return row[target]
-    except(e):
-        print("Error")
+    except FileNotFoundError:
+        print(f"{file} does not exist")
+    except:
+        print(f"Exception occurred while mapping {key} to {value} in {file}")
 
 def status_mapper(file,key,date,value,target):
     try:
@@ -23,5 +25,7 @@ def status_mapper(file,key,date,value,target):
         for index,row in df.iterrows():
             if row[key] == value and row['date']==date:
                 return row[target]
+    except FileNotFoundError:
+        print(f"{file} does not exist")
     except:
-        print("Error")
+        print(f"Exception occurred while mapping {key} to {value} in {file}")
