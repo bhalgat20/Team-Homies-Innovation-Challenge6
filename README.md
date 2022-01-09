@@ -39,7 +39,10 @@ A non-deterministic ML model which predicts optimal quantity of products for a s
 Adavantages : 
       1. 
       2.
-    
+      
+### Flow Diagram :
+![Flow-Diagram!](Flow-Diagram.png)
+
 ### Technical Detail : 
 
 #### Tech Stack :
