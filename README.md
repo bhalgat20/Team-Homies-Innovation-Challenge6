@@ -97,7 +97,7 @@ POST http://ondchomiestw.eastus.cloudapp.azure.com:3000/retail/prediction
     "date":"2020-02-09 15:27:49.529933"
 }
 ```
-- **Logistic prediction endpoint**
+- **Optimal logistic prediction endpoint**
 ```
 POST http://ondchomiestw.eastus.cloudapp.azure.com:3000/logistic/prediction
 {

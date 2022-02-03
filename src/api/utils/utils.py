@@ -17,7 +17,7 @@ def mapper(file, key, value, target):
             if row[key] == value:
                 return row[target]
     except FileNotFoundError:
-        print(f"{file} does not exist")
+        print(f"{file} does not exist, Please provide a valid File")
     except:
         print(f"Exception occurred while mapping {key} to {value} in {file}")
 
@@ -30,6 +30,6 @@ def status_mapper(file, key, date, value, target):
             if row[key] == value and row['date'] == date:
                 return row[target]
     except FileNotFoundError:
-        print(f"{file} does not exist")
+        print(f"{file} does not exist, Please provide a valid File")
     except:
         print(f"Exception occurred while mapping {key} to {value} in {file}")

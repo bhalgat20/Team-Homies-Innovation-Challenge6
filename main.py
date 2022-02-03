@@ -31,7 +31,7 @@ def custom_openapi():
     openapi_schema = get_openapi(
         title="Hommies-Inventory Management",
         version="1.0.0",
-        description="API's for predicting the lot-size and logistic optimal price",
+        description="API's for predicting the lot-size and optimal logistic delivery price",
         routes=app.routes,
     )
     app.openapi_schema = openapi_schema
