@@ -83,7 +83,8 @@ The swagger API documentation has been implemented.
 
 ## Demo Details
 
-- [Video Link](https://drive.google.com/file/d/1lFogyDgcSndmyOeRPu385E3WK2KeTEWj/view?usp=sharing)
+- [Video explanation for "Optimal Lot Size Prediction" ML model ](https://drive.google.com/file/d/1lFogyDgcSndmyOeRPu385E3WK2KeTEWj/view?usp=sharing)
+- [Video explanation for "Optimal Logistic Partner Prediction" ML model ](https://drive.google.com/file/d/1Ibb9oa9zw5s8k2tG7jns0hQ9ne-I_dUT/view?usp=sharing)
 
 - API Documentation link
 http://ondchomiestw.eastus.cloudapp.azure.com:3000/docs
